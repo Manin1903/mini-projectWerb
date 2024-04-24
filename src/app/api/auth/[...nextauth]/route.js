@@ -1,5 +1,5 @@
 
-import { loginService } from "@/app/service/auth.service";
+import { loginService } from "@/service/auth.service";
 import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -17,10 +17,21 @@ export const authOption = {
 
            //call login service
            const login =await loginService(newUserInfo);
-           return  login.payload;
+           console.log("login : ",login)
+           if (login?.status === 400) {
+            throw new Error(userInfo?.detail);
+          }
+           return  login;
         },
         }),
     ],
+    secret: process.env.NEXTAUTH_SECRET,
+    session: {
+      strategy: "jwt", // Adjust this based on your session strategy
+    },
+    pages: {
+      signIn: "/login",
+    },
 
     //used to set token into cookies
     callbacks: {
@@ -31,8 +42,7 @@ export const authOption = {
         session.user = token;
         return session;
         },
-    },
-       
+    },   
 };
 
 const handler=nextAuth(authOption);
