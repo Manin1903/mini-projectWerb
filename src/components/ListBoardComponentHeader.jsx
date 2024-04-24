@@ -1,7 +1,17 @@
+import { getAllTodoList } from "@/service/task.service";
+import { getAllWorkSpaceService } from "@/service/workSpace.service";
 import Image from "next/image";
 import React from "react";
 
-export default function ListBoardComponentHeader() {
+export default async function ListBoardComponentHeader({
+  sidebarTab,
+  id,
+  page,
+}) {
+  // const Workspace=await getAllTodoList();
+  // const check =Workspace.find((ws)=> ws.WorkSpaceId ==id)
+  
+  
   return (
     <>
       <div className="text-gray flex text-lg gap-3 mb-5">
