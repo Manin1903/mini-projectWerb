@@ -3,6 +3,8 @@ import TodoCardComponent from '@/components/TodoCardComponent'
 import React from 'react'
 
 const PageBoard =async ({ searchParams: { sidebar }, params: { id } }) => {
+    const allTasks = await getAllTodoLists(id);
+    let classes = "uppercase font-semibold py-2 ";
   return (
     <div className="pr-10 flex flex-col gap-6">
     <div>
@@ -40,4 +42,5 @@ const PageBoard =async ({ searchParams: { sidebar }, params: { id } }) => {
   )
 }
 
-export default PageBoard
+export default PageBoard;
+export const taskTitles = ["todo", "working on", "checking", "completed"];
