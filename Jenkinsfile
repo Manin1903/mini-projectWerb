@@ -14,7 +14,7 @@ pipeline {
     stage("deploy") {
       steps { 
         echo '🚀 Deploying the application'
-        sh 'docker start next_image || docker run --name next_container -d -p 3001:3000 next_image'
+        sh 'docker start next-jenkins || docker run --name next-jenkins -d -p 3001:3000 next_image'
         sh 'docker ps'
         echo "🚀🚀🚀"
       }
