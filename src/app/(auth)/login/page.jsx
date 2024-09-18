@@ -35,7 +35,7 @@ const LoginPage = () => {
         </div>
         <div className="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="text-2xl font-bold px-16 py-5">Loginnnnnnn</h1>
+            <h1 className="text-2xl font-bold px-16 py-5">Login with jingnin</h1>
             <form
               className="max-w-xl mx-auto w-[600px] px-16"
               action={handleLogin}
