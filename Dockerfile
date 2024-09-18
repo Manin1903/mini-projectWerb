@@ -1,4 +1,3 @@
-# Base image for pulling the latest official Node.js image from Docker Hub
 FROM node:latest
 
 # Create directory name inside container '-p' flag ensure that directory is created if it doesn't already exist.
