@@ -1,4 +1,5 @@
 FROM node:latest
+
 # Create directory name inside container '-p' flag ensure that directory is created if it doesn't already exist.
 RUN mkdir -p /app
 
